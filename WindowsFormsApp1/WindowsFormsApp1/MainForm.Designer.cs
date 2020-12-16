@@ -35,6 +35,7 @@
             this.wishlistdesc2 = new System.Windows.Forms.Label();
             this.checkedListBoxWishBox = new System.Windows.Forms.CheckedListBox();
             this.buttonRemove = new System.Windows.Forms.Button();
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.moviesGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovie)).BeginInit();
             this.SuspendLayout();
@@ -91,7 +92,7 @@
             // checkedListBoxWishBox
             // 
             this.checkedListBoxWishBox.FormattingEnabled = true;
-            this.checkedListBoxWishBox.Location = new System.Drawing.Point(595, 123);
+            this.checkedListBoxWishBox.Location = new System.Drawing.Point(599, 123);
             this.checkedListBoxWishBox.Name = "checkedListBoxWishBox";
             this.checkedListBoxWishBox.Size = new System.Drawing.Size(193, 259);
             this.checkedListBoxWishBox.TabIndex = 5;
@@ -106,17 +107,26 @@
             this.buttonRemove.UseVisualStyleBackColor = true;
             this.buttonRemove.Click += new System.EventHandler(this.button1_Click);
             // 
+            // webBrowser
+            // 
+            this.webBrowser.Location = new System.Drawing.Point(847, 36);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(193, 402);
+            this.webBrowser.TabIndex = 7;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1052, 450);
             this.Controls.Add(this.buttonRemove);
             this.Controls.Add(this.checkedListBoxWishBox);
             this.Controls.Add(this.wishlistdesc2);
             this.Controls.Add(this.wishlistdesc1);
             this.Controls.Add(this.wishlisttitle);
             this.Controls.Add(this.moviesGB);
+            this.Controls.Add(this.webBrowser);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.moviesGB.ResumeLayout(false);
@@ -135,5 +145,6 @@
         private System.Windows.Forms.Label wishlistdesc2;
         private System.Windows.Forms.CheckedListBox checkedListBoxWishBox;
         private System.Windows.Forms.Button buttonRemove;
+        private System.Windows.Forms.WebBrowser webBrowser;
     }
 }

@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     class Movie
     {
+        public string Stars { get; set; }
         public string title { get; }
         public string summary { get; }
         public string price { get; }
@@ -26,6 +27,7 @@ namespace WindowsFormsApp1
             this.price = price;
             this.category = category;
             this.artist = artist;
+            this.Stars = "0";
         }
     }
     class RssManager
