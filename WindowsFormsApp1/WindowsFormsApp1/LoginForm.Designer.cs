@@ -37,9 +37,10 @@
             // 
             // SignInBtn
             // 
-            this.SignInBtn.Location = new System.Drawing.Point(21, 135);
+            this.SignInBtn.Location = new System.Drawing.Point(28, 166);
+            this.SignInBtn.Margin = new System.Windows.Forms.Padding(4);
             this.SignInBtn.Name = "SignInBtn";
-            this.SignInBtn.Size = new System.Drawing.Size(156, 23);
+            this.SignInBtn.Size = new System.Drawing.Size(208, 28);
             this.SignInBtn.TabIndex = 0;
             this.SignInBtn.Text = "Sign In";
             this.SignInBtn.UseVisualStyleBackColor = true;
@@ -47,18 +48,21 @@
             // 
             // loginBtn
             // 
-            this.loginBtn.Location = new System.Drawing.Point(21, 106);
+            this.loginBtn.Location = new System.Drawing.Point(28, 130);
+            this.loginBtn.Margin = new System.Windows.Forms.Padding(4);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(156, 23);
+            this.loginBtn.Size = new System.Drawing.Size(208, 28);
             this.loginBtn.TabIndex = 1;
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // FullNameTxtBx
             // 
-            this.FullNameTxtBx.Location = new System.Drawing.Point(21, 18);
+            this.FullNameTxtBx.Location = new System.Drawing.Point(28, 22);
+            this.FullNameTxtBx.Margin = new System.Windows.Forms.Padding(4);
             this.FullNameTxtBx.Name = "FullNameTxtBx";
-            this.FullNameTxtBx.Size = new System.Drawing.Size(156, 20);
+            this.FullNameTxtBx.Size = new System.Drawing.Size(207, 22);
             this.FullNameTxtBx.TabIndex = 2;
             this.FullNameTxtBx.Text = "Full Name";
             this.FullNameTxtBx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -66,9 +70,10 @@
             // 
             // EmailTxtBx
             // 
-            this.EmailTxtBx.Location = new System.Drawing.Point(21, 44);
+            this.EmailTxtBx.Location = new System.Drawing.Point(28, 54);
+            this.EmailTxtBx.Margin = new System.Windows.Forms.Padding(4);
             this.EmailTxtBx.Name = "EmailTxtBx";
-            this.EmailTxtBx.Size = new System.Drawing.Size(156, 20);
+            this.EmailTxtBx.Size = new System.Drawing.Size(207, 22);
             this.EmailTxtBx.TabIndex = 3;
             this.EmailTxtBx.Text = "Email";
             this.EmailTxtBx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -76,24 +81,27 @@
             // 
             // PasswordTxtBx
             // 
-            this.PasswordTxtBx.Location = new System.Drawing.Point(21, 70);
+            this.PasswordTxtBx.Location = new System.Drawing.Point(28, 86);
+            this.PasswordTxtBx.Margin = new System.Windows.Forms.Padding(4);
             this.PasswordTxtBx.Name = "PasswordTxtBx";
-            this.PasswordTxtBx.Size = new System.Drawing.Size(156, 20);
+            this.PasswordTxtBx.Size = new System.Drawing.Size(207, 22);
             this.PasswordTxtBx.TabIndex = 4;
             this.PasswordTxtBx.Text = "Password";
             this.PasswordTxtBx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.PasswordTxtBx.Click += new System.EventHandler(this.PasswordTxtBx_Click);
+            this.PasswordTxtBx.TextChanged += new System.EventHandler(this.PasswordTxtBx_TextChanged);
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(193, 179);
+            this.ClientSize = new System.Drawing.Size(257, 220);
             this.Controls.Add(this.PasswordTxtBx);
             this.Controls.Add(this.EmailTxtBx);
             this.Controls.Add(this.FullNameTxtBx);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.SignInBtn);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.Text = "Form1";
             this.ResumeLayout(false);

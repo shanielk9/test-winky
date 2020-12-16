@@ -74,11 +74,11 @@ namespace WindowsFormsApp1
             {
                 return false;
             }
-            if(!checkEmail())
+            if (!checkEmail())
             {
                 return false;
             }
-            if(!checkPassword())
+            if (!checkPassword())
             {
                 return false;
             }
@@ -92,8 +92,11 @@ namespace WindowsFormsApp1
                 return false;
             if (FullNameTxtBx.Text.Length < k_FullNameMinChar)
                 return false;
+            if (FullNameTxtBx.Text.Contains("Full Name"))
+                return false;
 
-            m_userData.fullname = FullNameTxtBx.Text;
+            m_userData.fullname = FullNameTxtBx.Text.ToLower();
+           
             return true;
         }
 
@@ -104,7 +107,7 @@ namespace WindowsFormsApp1
                 var addr = new System.Net.Mail.MailAddress(EmailTxtBx.Text);
                 if (addr.Address == EmailTxtBx.Text)
                 {
-                    m_userData.email = EmailTxtBx.Text;
+                    m_userData.email = EmailTxtBx.Text.ToLower();
                     return true;
                 }
             }
@@ -119,6 +122,8 @@ namespace WindowsFormsApp1
         {
             if (PasswordTxtBx.Text.Length < k_PasswordMinChar)
                 return false;
+            if (PasswordTxtBx.Text.Contains("Password"))
+                return false;
 
             m_userData.password = PasswordTxtBx.Text;
             return true;
@@ -130,7 +135,7 @@ namespace WindowsFormsApp1
 
             if (!checkIfAllTxtBxInitForSign())
             {
-                MessageBox.Show("One of the enterd values illegal.");
+                MessageBox.Show("One or more of the enterd values illegal.");
             }
             else
             {
@@ -144,13 +149,15 @@ namespace WindowsFormsApp1
                         // De-serialize to object or create new list
                         var usersList = JsonConvert.DeserializeObject<List<UserData>>(jsonData) ?? new List<UserData>();
 
-                        // Add any new employees
+                        // Add any new users
                         usersList.Add(m_userData);
 
                         // Update json data string
                         jsonData = JsonConvert.SerializeObject(usersList);
                         System.IO.File.WriteAllText(filePath, jsonData);
                         ////////////////////////////////////////////////////
+                        ///
+                        MessageBox.Show("You are now a User! :).");
                     }
                     else
                     {
@@ -181,7 +188,7 @@ namespace WindowsFormsApp1
                     JsonFromFile = reader.ReadToEnd();
                 }
 
-                if(JsonFromFile.Contains('"'+m_userData.email+'"'))
+                if (JsonFromFile.Contains('"' + m_userData.email.ToLower() + '"'))
                 {
                     isAppear = true;
                 }
@@ -193,5 +200,54 @@ namespace WindowsFormsApp1
 
             return isAppear;
         }
+
+        private void loginBtn_Click(object sender, EventArgs e)
+        {
+            if (checkIfCorrectUserInfo())
+            {
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("One or more of the enterd values wrong.\nYou might not signed in yet?");
+            }
+        }
+
+        private bool checkIfCorrectUserInfo()
+        {
+            if (checkIfAllTxtBxInitForSign())
+            {
+                try
+                {
+                    string JsonFromFile;
+                    string jsonData = JsonConvert.SerializeObject(m_userData);
+                    using (var reader = new StreamReader(@"C:\\temp\\UsersJson.json"))
+                    {
+                        JsonFromFile = reader.ReadToEnd();
+                    }
+
+                    if (JsonFromFile.Contains(jsonData))
+                    {
+                        return true;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return false;
+                }
+            }
+
+            return false;
+        }
+
+        private void PasswordTxtBx_TextChanged(object sender, EventArgs e)
+        {
+            PasswordTxtBx.PasswordChar = '*';
+        }
     }
+
 }
+
