@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     class Movie
     {
-        public string Stars { get; set; }
+        public string Rating { get; set; }
         public string title { get; }
         public string summary { get; }
         public string price { get; }
@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
             this.price = price;
             this.category = category;
             this.artist = artist;
-            this.Stars = "0";
+            this.Rating = "0";
         }
     }
     class RssManager
@@ -43,17 +43,18 @@ namespace WindowsFormsApp1
         {
             
             var webString = new WebClient().DownloadString(RssUrl);
-            Newtonsoft.Json.Linq.JObject jsonString = Newtonsoft.Json.Linq.JObject.Parse(webString);
-            IList<Newtonsoft.Json.Linq.JToken> movieListJson = jsonString["feed"]["entry"].Children().ToList();
+            //parse to json string
+            JObject jsonString = JObject.Parse(webString);
+            //create list from json
+            IList<JToken> movieListJson = jsonString["feed"]["entry"].Children().ToList();
 
-            foreach(Newtonsoft.Json.Linq.JObject movie in movieListJson)
+            foreach(JObject movie in movieListJson)
             {
                 string title = movie["title"]["label"].ToString() ;
                 string summary = movie["summary"]["label"].ToString();
                 string price = movie["im:price"]["label"].ToString();
                 string category = movie["category"]["attributes"]["term"].ToString();
                 string artist = movie["im:artist"]["label"].ToString();
-                //string imgPath = movie["im:image"].First["lable"].ToString();
 
                 movieList.Add(new Movie(title, summary, price, category, artist));
             }

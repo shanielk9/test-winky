@@ -105,7 +105,7 @@
             this.buttonRemove.TabIndex = 6;
             this.buttonRemove.Text = "Remove From Wish List";
             this.buttonRemove.UseVisualStyleBackColor = true;
-            this.buttonRemove.Click += new System.EventHandler(this.button1_Click);
+            this.buttonRemove.Click += new System.EventHandler(this.removeBtn_Click);
             // 
             // webBrowser
             // 

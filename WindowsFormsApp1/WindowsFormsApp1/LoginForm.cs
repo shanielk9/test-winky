@@ -88,7 +88,7 @@ namespace WindowsFormsApp1
 
         private bool checkName()
         {
-            if (!FullNameTxtBx.Text.Contains(" ")) //check if there is one space
+            if (!FullNameTxtBx.Text.Contains(" ")) //check if there is space = at least two words
                 return false;
             if (FullNameTxtBx.Text.Length < k_FullNameMinChar)
                 return false;
@@ -154,9 +154,9 @@ namespace WindowsFormsApp1
 
                         // Update json data string
                         jsonData = JsonConvert.SerializeObject(usersList);
+                        // Write the data to json file
                         System.IO.File.WriteAllText(filePath, jsonData);
-                        ////////////////////////////////////////////////////
-                        ///
+                        
                         MessageBox.Show("You are now a User! :).");
                     }
                     else
@@ -177,18 +177,18 @@ namespace WindowsFormsApp1
 
             try
             {
-                if (!(File.Exists(@"C:\\temp\\UsersJson.json")))
+                if (!(File.Exists(@"C:\\temp\\UsersJson.json")))//check if file  dosent exsist
                 {
                     return false;
                 }
 
-                string JsonFromFile;
+                string JsonFromFile; 
                 using (var reader = new StreamReader(@"C:\\temp\\UsersJson.json"))
                 {
                     JsonFromFile = reader.ReadToEnd();
                 }
 
-                if (JsonFromFile.Contains('"' + m_userData.email.ToLower() + '"'))
+                if (JsonFromFile.Contains('"' + m_userData.email.ToLower() + '"')) //if mail is exsist in json = the user has been signed in before
                 {
                     isAppear = true;
                 }
