@@ -32,6 +32,10 @@ namespace WindowsFormsApp1
         {
             try
             {
+                if (!Directory.Exists(@"C:\\temp"))
+                {
+                    Directory.CreateDirectory(@"C:\\temp");
+                }
                 if (!(File.Exists(@"C:\\temp\\UsersJson.json")))
                 {
                     //url that generate rendom full name & email & password
@@ -96,7 +100,7 @@ namespace WindowsFormsApp1
                 return false;
 
             m_userData.fullname = FullNameTxtBx.Text.ToLower();
-           
+
             return true;
         }
 
@@ -156,7 +160,7 @@ namespace WindowsFormsApp1
                         jsonData = JsonConvert.SerializeObject(usersList);
                         // Write the data to json file
                         System.IO.File.WriteAllText(filePath, jsonData);
-                        
+
                         MessageBox.Show("You are now a User! :).");
                     }
                     else
@@ -182,7 +186,7 @@ namespace WindowsFormsApp1
                     return false;
                 }
 
-                string JsonFromFile; 
+                string JsonFromFile;
                 using (var reader = new StreamReader(@"C:\\temp\\UsersJson.json"))
                 {
                     JsonFromFile = reader.ReadToEnd();
