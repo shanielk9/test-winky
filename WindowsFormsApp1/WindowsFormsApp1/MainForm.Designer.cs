@@ -47,7 +47,7 @@
             this.moviesGB.Size = new System.Drawing.Size(570, 431);
             this.moviesGB.TabIndex = 0;
             this.moviesGB.TabStop = false;
-            this.moviesGB.Text = "movies:";
+            this.moviesGB.Text = "Top Apple Movies:";
             // 
             // dataGridViewMovie
             // 
