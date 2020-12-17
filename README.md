@@ -10,7 +10,7 @@
 
 \
 NOTE: Json file with legal users will creare in path "C:/temp".
-      On first run it will generate using FillText.com a 1000 rendom legal users.
+      On first run it will generate using FillText.com a 1000 random legal users.
 \
 \
 **ScreenShots:**
