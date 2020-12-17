@@ -9,15 +9,15 @@
 - Serialization
 
 \
-NOTE: Json file of leagel users will creare in path "C:/temp".
+NOTE: Json file with legal users will creare in path "C:/temp".
+      On first run it will generate using FillText.com a 1000 rendom legal users.
 \
 \
 **ScreenShots:**
 \
 \
-![1](https://user-images.githubusercontent.com/50596957/88057863-5c60ac00-cb6b-11ea-9f17-550235375b0c.PNG)
-![2PNG](https://user-images.githubusercontent.com/50596957/88060335-c9297580-cb6e-11ea-9038-d6924a2356c6.jpg)
-![3PNG](https://user-images.githubusercontent.com/50596957/88060371-d34b7400-cb6e-11ea-8f48-8ffbf8fd0429.jpg)
-![4PNG](https://user-images.githubusercontent.com/50596957/88060373-d47ca100-cb6e-11ea-99d3-99ff8905a97a.jpg)
-![6PNG](https://user-images.githubusercontent.com/50596957/88060374-d5adce00-cb6e-11ea-89de-4b4a9df4fe19.jpg)
-![7PNG](https://user-images.githubusercontent.com/50596957/88060379-d6466480-cb6e-11ea-989a-6c7d166cba43.jpg)
+![1](https://user-images.githubusercontent.com/50596957/102456276-931eed80-4049-11eb-9a3c-d18b31702859.PNG)
+![2](https://user-images.githubusercontent.com/50596957/102456278-931eed80-4049-11eb-88ee-660861867f72.PNG)
+![3](https://user-images.githubusercontent.com/50596957/102456283-94501a80-4049-11eb-9b4e-eb4ca1a192cd.PNG)
+![4](https://user-images.githubusercontent.com/50596957/102456273-91edc080-4049-11eb-9e5e-0145756f745f.PNG)
+![5](https://user-images.githubusercontent.com/50596957/102456266-8ef2d000-4049-11eb-81c9-008131296a9f.PNG)
